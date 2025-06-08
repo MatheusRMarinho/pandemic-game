@@ -4,6 +4,7 @@ from .mapa import Mapa
 from .jogador import Jogador
 from .carta import Baralho, CartaCidade, CartaEpidemia
 from .acao import Acao
+from .doenca import Doenca
 
 class Jogo:
     """
@@ -11,6 +12,8 @@ class Jogo:
     Implementa o Padrão GoF Facade, fornecendo uma interface
     simplificada para as operações do jogo.
     """
+    LIMITE_SURTOS = 8
+    
     def __init__(self, nomes_jogadores: list, nomes_cidades: list):
         print("Iniciando o jogo Pandemic!")
         self.mapa = self._inicializar_mapa(nomes_cidades)
